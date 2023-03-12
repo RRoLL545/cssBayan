@@ -1,3 +1,7 @@
+:root {
+  --transition-time: 0.8s;
+}
+
 .global-wrapper {
   background-color: lightblue;
   padding: 2em 0;
@@ -6,6 +10,16 @@
 .accordeon {
   width: 80vw;
   margin: 0 auto;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.input-invisible {
+  display: none;
 }
 
 h1, h2 {
@@ -49,39 +63,22 @@ h2 {
   border: none;
   opacity: 0;
   visibility: hidden;
-  transition: 1.5s opacity, 1.5s visibility;
+  margin-top: 1em;
+  transform-origin: center;
+  transform: rotate(45deg);
+  transition: var(--transition-time) all;
 }
 
 .open-close > svg {
   width: 100%;
   height: 100%;
-  margin-top: 1em;
 }
 
 .meme-wrapper > .icon-wrapper {
   height: 0;
   opacity: 0;
   visibility: hidden;
-  transition: 1.5s opacity, 1.5s visibility;
-}
-
-.meme-wrapper > .open-close {
-  transform: rotate(45deg);
-  transition: 1s transform;
-}
-
-.meme-wrapper.meme-wrapper_active > h2 {
-  color: blue;
-}
-
-.meme-wrapper.meme-wrapper_active > .icon-wrapper {
-  height: auto;
-  opacity: 1;
-  visibility: visible;
-}
-
-.meme-wrapper.meme-wrapper_active > .open-close {
-  transform: rotate(0);
+  transition: var(--transition-time) all;
 }
 
 .meme-wrapper:hover {
@@ -91,16 +88,35 @@ h2 {
 .accordeon:hover .open-close {
   opacity: 1;
   visibility: visible;
-  transition: 1.5s opacity, 1.5s visibility;
+  transition: var(--transition-time) all;
 }
 
 .accordeon:hover h2 {
-  color: blue;
-  transition: 1s color;
+  color: darkcyan;
+  transition: var(--transition-time) all;
 }
 
-.meme-wrapper:not(.meme-wrapper_active):hover > .icon-wrapper {
+.meme-wrapper:hover > .icon-wrapper {
   height: auto;
   opacity: 1;
   visibility: visible;
+  transition: var(--transition-time) all;
+}
+
+input:checked ~ h2 {
+  color: darkcyan;
+  transition: var(--transition-time) all;
+}
+
+input:checked ~ .open-close {
+  transform-origin: center;
+  transform: rotate(0);
+  transition: var(--transition-time) all;
+}
+
+input:checked ~ .icon-wrapper {
+  height: auto;
+  opacity: 1;
+  visibility: visible;
+  transition: var(--transition-time) all;
 }
