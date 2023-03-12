@@ -1,6 +1,6 @@
 .global-wrapper {
   background-color: lightblue;
-  padding: 10px 70px;
+  padding: 2em 4em;
 }
 
 h1, h2 {
@@ -9,14 +9,22 @@ h1, h2 {
 
 .meme-wrapper {
   position: relative;
-  border-top: 2px solid grey;
+  border-top: 0.2em solid grey;
   padding-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  padding-right: 1em;
 }
 
 .icon-wrapper {
-  height: 800px;
+  flex: 1 0 100%;
+  height: 80vh;
   display: flex;
   justify-content: center;
+}
+
+h2 {
+  margin-right: auto;
 }
 
 .icon-wrapper > img {
@@ -26,16 +34,18 @@ h1, h2 {
 }
 
 .open-close {
-  width: 50px;
-  height: 50px;
+  width: 2em;
+  height: 2em;
   background: none;
   border: none;
-  position: absolute;
-  top: 20px;
-  right: 20px;
 }
 
 .open-close > svg {
   width: 100%;
   height: 100%;
+  margin-top: 1em;
+}
+
+.meme-wrapper:hover {
+  cursor: pointer;
 }
