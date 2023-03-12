@@ -120,3 +120,35 @@ input:checked ~ .icon-wrapper {
   visibility: visible;
   transition: var(--transition-time) all;
 }
+
+@media (max-width: 1919px) {
+  h1 {
+    font-size: 1.5em;
+  }
+
+  h2 {
+    font-size: 1em;
+  }
+
+  .open-close {
+    width: 1.5em;
+    height: 1.5em;
+    margin-top: 0.83em;
+  }
+}
+
+@media (max-width: 819px) {
+  h1 {
+    font-size: 1em;
+  }
+
+  h2 {
+    font-size: 0.83em;
+  }
+
+  .open-close {
+    width: 1.2em;
+    height: 1.2em;
+    margin-top: 0.7em;
+  }
+}
