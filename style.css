@@ -1,0 +1,154 @@
+:root {
+  --transition-time: 0.8s;
+}
+
+.global-wrapper {
+  background-color: lightblue;
+  padding: 2em 0;
+}
+
+.accordeon {
+  width: 80vw;
+  margin: 0 auto;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.input-invisible {
+  display: none;
+}
+
+h1, h2 {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1.main-header {
+  width: 80vw;
+  margin: 0.67em auto;
+}
+
+.meme-wrapper {
+  position: relative;
+  border-top: 0.2em solid grey;
+  padding-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  padding-right: 1em;
+}
+
+.icon-wrapper {
+  flex: 1 0 100%;
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  margin-right: auto;
+}
+
+.icon-wrapper > img {
+  max-width: 80%;
+  height: auto;
+  object-fit: cover;	
+}
+
+.open-close {
+  width: 2em;
+  height: 2em;
+  background: none;
+  border: none;
+  opacity: 0;
+  visibility: hidden;
+  margin-top: 1em;
+  transform-origin: center;
+  transform: rotate(45deg);
+  transition: var(--transition-time) all;
+}
+
+.open-close > svg {
+  width: 100%;
+  height: 100%;
+}
+
+.meme-wrapper > .icon-wrapper {
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-time) all;
+}
+
+.meme-wrapper:hover {
+  cursor: pointer;
+}
+
+.accordeon:hover .open-close {
+  opacity: 1;
+  visibility: visible;
+  transition: var(--transition-time) all;
+}
+
+.accordeon:hover h2 {
+  color: darkcyan;
+  transition: var(--transition-time) all;
+}
+
+.meme-wrapper:hover > .icon-wrapper {
+  height: auto;
+  opacity: 1;
+  visibility: visible;
+  transition: var(--transition-time) all;
+}
+
+input:checked ~ h2 {
+  color: darkcyan;
+  transition: var(--transition-time) all;
+}
+
+input:checked ~ .open-close {
+  transform-origin: center;
+  transform: rotate(0);
+  transition: var(--transition-time) all;
+}
+
+input:checked ~ .icon-wrapper {
+  height: auto;
+  opacity: 1;
+  visibility: visible;
+  transition: var(--transition-time) all;
+}
+
+@media (max-width: 1919px) {
+  h1 {
+    font-size: 1.5em;
+  }
+
+  h2 {
+    font-size: 1em;
+  }
+
+  .open-close {
+    width: 1.5em;
+    height: 1.5em;
+    margin-top: 0.83em;
+  }
+}
+
+@media (max-width: 819px) {
+  h1 {
+    font-size: 1em;
+  }
+
+  h2 {
+    font-size: 0.83em;
+  }
+
+  .open-close {
+    width: 1.2em;
+    height: 1.2em;
+    margin-top: 0.7em;
+  }
+}
