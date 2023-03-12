@@ -47,7 +47,9 @@ h2 {
   height: 2em;
   background: none;
   border: none;
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: 1.5s opacity, 1.5s visibility;
 }
 
 .open-close > svg {
@@ -57,11 +59,15 @@ h2 {
 }
 
 .meme-wrapper > .icon-wrapper {
-  display: none;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: 1.5s opacity, 1.5s visibility;
 }
 
 .meme-wrapper > .open-close {
   transform: rotate(45deg);
+  transition: 1s transform;
 }
 
 .meme-wrapper.meme-wrapper_active > h2 {
@@ -69,7 +75,9 @@ h2 {
 }
 
 .meme-wrapper.meme-wrapper_active > .icon-wrapper {
-  display: flex;
+  height: auto;
+  opacity: 1;
+  visibility: visible;
 }
 
 .meme-wrapper.meme-wrapper_active > .open-close {
@@ -81,9 +89,18 @@ h2 {
 }
 
 .accordeon:hover .open-close {
-  display: inline;
+  opacity: 1;
+  visibility: visible;
+  transition: 1.5s opacity, 1.5s visibility;
 }
 
 .accordeon:hover h2 {
   color: blue;
+  transition: 1s color;
+}
+
+.meme-wrapper:not(.meme-wrapper_active):hover > .icon-wrapper {
+  height: auto;
+  opacity: 1;
+  visibility: visible;
 }
