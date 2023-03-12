@@ -55,6 +55,22 @@ h2 {
   margin-top: 1em;
 }
 
+.meme-wrapper > .icon-wrapper {
+  display: none;
+}
+
+.meme-wrapper > .open-close {
+  transform: rotate(45deg);
+}
+
+.meme-wrapper.meme-wrapper_active > .icon-wrapper {
+  display: flex;
+}
+
+.meme-wrapper.meme-wrapper_active > .open-close {
+  transform: rotate(0);
+}
+
 .meme-wrapper:hover {
   cursor: pointer;
 }
